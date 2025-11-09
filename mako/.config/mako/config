@@ -1,0 +1,21 @@
+# Colors
+
+font=JetBrainsMono Nerd Font 14
+width=400
+
+background-color=#2e3440
+
+text-color=#d8dee9
+text-alignment=left
+
+border-size=3
+border-color=#88c0d0
+border-radius=10
+icon-border-radius=10
+
+progress-color=over #8fbcbb
+
+icon-path=
+
+[urgency=high]
+border-color=#bf616a

@@ -1,0 +1,207 @@
+/* ~/.config/waybar/style.css */
+
+/* Nord-inspired Color Palette with better contrast on #0F161E */
+@define-color bg rgba(41, 46, 57, 0.85);           /* Основной фон - темнее для контраста */
+@define-color bg-light rgba(46, 52, 64, 0.85);     /* Светлый фон элементов */
+@define-color bg-lighter rgba(59, 66, 82, 0.7);    /* Ховер-состояния */
+@define-color fg #eceff4;                          /* Основной текст - ярче */
+@define-color fg-dim #e5e9f0;                      /* Второстепенный текст */
+@define-color fg-dimmer #d8dee9;                   /* Неактивный текст */
+@define-color accent #88c0d0;                      /* Основной акцент */
+@define-color border #8fbcbb;                      /* Границы */
+@define-color separator #4c566a;                   /* Разделители - толще и заметнее */
+
+/* Цвета для модулей (сохраняем твою палитру) */
+@define-color cpu-color #bf616a;                   /* CPU */
+@define-color memory-color #d08770;                /* Memory */
+@define-color pulseaudio-color #7d9bba;            /* Audio */
+@define-color backlight-color #8fbcbb;             /* Backlight */
+@define-color clock-color #c8d2e0;                 /* Clock */
+@define-color battery-color #8fbcbb;               /* Battery */
+@define-color network-color #b48ead;               /* Network */
+@define-color bluetooth-color #707d9d;             /* Bluetooth */
+
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px; /* Немного уменьшил для баланса */
+  min-height: 0;
+}
+
+window#waybar {
+  background: @bg;
+  color: @fg;
+  margin: 10px 10px 0 10px;
+}
+
+/* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ МОДУЛЕЙ === */
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-power-menu,
+#custom-sep,
+#hyprland-window,
+#workspaces {
+  background-color: transparent;
+  padding: 0 2px 0 2px;
+}
+
+/* === РАБОЧИЕ СТОЛЫ === */
+/*#workspaces {
+padding: 0 6px;
+}*/
+
+#clock {
+  padding: 0 0 0 15px;
+}
+
+#workspaces button {
+color: @fg-dimmer;
+/*padding: 0 8px;
+margin: 2px;
+border-radius: 4px;*/
+background: transparent;
+transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+color: @border;
+background: transparent;
+}
+
+#workspaces button:hover {
+/* background: @bg-lighter; */
+color: @border;
+}
+
+/* === ЦВЕТА МОДУЛЕЙ (сохраняем твою палитру) === */
+#cpu {
+color: @cpu-color;
+}
+
+#memory {
+color: @memory-color;
+}
+
+#pulseaudio {
+color: @pulseaudio-color;
+}
+
+#backlight {
+color: @backlight-color;
+}
+
+#clock {
+color: @clock-color;
+}
+
+#battery {
+color: @battery-color;
+}
+
+#network {
+color: @network-color;
+}
+
+#bluetooth {
+color: @bluetooth-color;
+}
+
+/* === РАЗДЕЛИТЕЛИ - СДЕЛАЕМ ИХ ЗАМЕТНЕЕ === */
+#custom-sep {
+color: @fg-dimmer;
+background: transparent;
+border: none;/*
+font-weight: bold;
+font-size: 16px;
+padding: 0 2px;
+margin: 0 1px;
+min-width: 4px;*/
+}
+
+/* === POWER MENU === */
+#custom-power-menu {
+  color: @accent;
+  font-weight: bold;
+/*   margin: 4px; */
+padding: 0 16px 0 0;
+}
+
+#custom-power-menu:hover {
+background: @accent;
+color: @fg;
+}
+
+/* === ОКНО HYPRLAND === */
+#hyprland-window {
+color: @fg-dim;
+font-style: italic;
+font-size: 13px;
+}
+
+/* === СОСТОЯНИЯ БАТАРЕИ === */
+#battery.charging,
+#battery.full,
+#battery.plugged {
+color: #a3be8c; /* Зелёный для заряда */
+animation: pulse 2s ease-in-out infinite;
+}
+
+#battery.critical:not(.charging) {
+color: #bf616a; /* Красный для критического уровня */
+animation: blink 1s ease-in-out infinite alternate;
+}
+
+/* === СОСТОЯНИЯ СЕТИ И БЛЮТУЗ === */
+#network.disconnected {
+color: #bf616a;
+}
+
+#bluetooth.disconnected {
+color: #bf616a;
+}
+
+#pulseaudio.muted {
+color: #bf616a;
+}
+
+/* === АНИМАЦИИ === */
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.4; }
+}
+
+/*@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}*/
+
+/* === ХОВЕР-ЭФФЕКТЫ ДЛЯ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ === */
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover {
+color: @fg;
+transition: all 0.3s ease-in-out;
+}
+
+/* === ТУЛТИПЫ === */
+tooltip {
+  background: @bg;
+  border-radius: 8px;
+  color: @fg;
+}
+
+tooltip label {
+  color: @fg;
+}

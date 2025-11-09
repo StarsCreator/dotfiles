@@ -1,0 +1,196 @@
+* {
+	bg0:#2E3440FF;
+	bg1:#3b4552FF;
+	bg2:#434c5eff;
+	bg3:#4c566aff;
+	
+	fg0:#d8dee9ff;
+	fg1:#e5e9f0ff;
+	fg2:#eceff4ff;
+	
+	ac0:#8fbcbbff;
+	ac1:#88c0d0ff;
+	ac2:#81a1c1ff;
+	ac3:#5e81acff;
+	
+	red:#bf616aff;
+	org:#d08770ff;
+	yel:#ebcb8bff;
+	grn:#a3be8cff;
+	prl:#b48eadff;  
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      3px solid;
+    border-radius:               10px;
+    border-color:                @ac2;
+    background-color:            black / 10%;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     20px 20px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @ac2;
+    background-color:            @bg0;
+    children:                    [ "inputbar", "listview", "mode-switcher" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    border:                      0px solid;
+    border-radius:               10px;
+    border-color:                @ac2;
+    background-color:            white / 5%;
+    text-color:                  @fg1;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    font: "JetBrainsMono Nerd Font 16";
+    padding:			 7 30 7 30px;
+    background-color:            @ac0;
+    text-color:                  @bg0;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "";
+    placeholder-color:           inherit;
+    vertical-align:		 0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @ac2;
+    background-color:            transparent;
+    text-color:                  @fg1;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @bg3;
+    border-radius:               0px;
+    background-color:            @bg1;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     10px 10px;
+    border:                      0px solid;
+    border-radius:               10px;
+    border-color:                @ac0;
+    background-color:            transparent;
+    text-color:                  @fg1;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg1;
+}
+element selected.normal {
+    /* background-color:            white / 5%; */
+    background-color:		 @bg2;
+    text-color:                  @fg1;
+    border:                      3px solid;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        36px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0;
+}
+
+/*****----- Mode-switcher -----*****/
+mode-switcher {
+    enabled: true;
+    orientation: horizontal;
+    background-color: transparent;
+    border-top: 3px solid;
+    border-color: @ac0;
+}
+
+button {
+    background-color: transparent;
+    text-color: @fg1;
+    padding: 7px;
+}
+
+button selected {
+    background-color: @ac0;
+    text-color: @bg0;
+    border-radius: 10px;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               10px;
+    border-color:                @ac2;
+    background-color:            black / 10%;
+    text-color:                  @red;
+}
+textbox {
+    background-color:            transparent;
+    text-color:                  @fg1;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}
