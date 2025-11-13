@@ -1,0 +1,28 @@
+linux_display_server wayland
+wayland_titlebar_color background
+
+cursor_trail 2
+cursor_text_color #8fbcbb
+
+# Копирование при выделении (как в браузере)
+copy_on_select yes
+
+# Формат буфера обмена
+clipboard_control write-clipboard write-primary
+
+# Горячие клавиши
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+
+font_family JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+font_size 12
+background_opacity 0.75
+dynamic_background_opacity yes
+
+
+# theme
+include ./themes/nord.conf
