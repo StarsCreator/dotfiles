@@ -1,0 +1,91 @@
+# Nord тема с акцентом 8fbcbb
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Цвета Nord
+[palette]
+nord0 = "#2E3440"
+nord1 = "#3B4252" 
+nord2 = "#434C5E"
+nord3 = "#4C566A"
+nord4 = "#D8DEE9"
+nord5 = "#E5E9F0"
+nord6 = "#ECEFF4"
+nord7 = "#8FBCBB"
+nord8 = "#88C0D0"
+nord9 = "#81A1C1"
+nord10 = "#5E81AC"
+nord11 = "#BF616A"
+nord12 = "#D08770"
+nord13 = "#EBCB8B"
+nord14 = "#A3BE8C"
+nord15 = "#B48EAD"
+
+# Промпт
+[character]
+success_symbol = "[❯](bold #8fbcbb)"
+error_symbol = "[❯](bold #bf616a)"
+vicmd_symbol = "[❮](bold #8fbcbb)"
+
+# Директория
+[directory]
+style = "bold #8fbcbb"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only_style = "197"
+read_only = " "
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Videos" = "辶"
+"dotfiles" = " "
+".config" = " "
+
+# Git branch
+[git_branch]
+style = "bold #8fbcbb"
+symbol = " "
+format = "on [$symbol$branch]($style) "
+
+# Git status
+[git_status]
+style = "bold #8fbcbb"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}" 
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "${count}"
+stashed = ""
+modified = "${count}"
+staged = "${count}"
+renamed = "➜"
+deleted = ""
+
+# Время выполнения команд
+[cmd_duration]
+style = "bold #8fbcbb"
+format = "[$duration]($style)"
+
+# Хостнейм
+[hostname]
+ssh_symbol = " "
+style = "bold #8fbcbb"
+format = "[$ssh_symbol$hostname]($style) "
+
+# Юзернейм
+[username]
+style_user = "bold #8fbcbb"
+style_root = "bold #bf616a"
+format = "[$user]($style) "
+disabled = false
+show_always = true
