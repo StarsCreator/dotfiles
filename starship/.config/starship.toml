@@ -1,0 +1,142 @@
+# ~/.config/starship.toml - исправленная версия
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$all\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Промпт
+[character]
+success_symbol = "[❯](bold #8FBCBB)"
+error_symbol = "[❯](bold #BF616A)"
+vicmd_symbol = "[❮](bold #8FBCBB)"
+
+# Директория
+[directory]
+style = "bold #81a1c1"
+truncation_length = 4
+truncation_symbol = "…/"
+read_only_style = "#BF616A"
+read_only = " "
+
+# Git branch
+[git_branch]
+style = "bold #B48EAD"
+symbol = " "
+format = "on [$symbol$branch]($style) "
+
+# Git status
+[git_status]
+style = "bold #81a1c1"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}" 
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "${count}"
+stashed = ""
+modified = "${count}"
+staged = "${count}"
+renamed = "➜"
+deleted = ""
+
+# Время выполнения команд
+[cmd_duration]
+style = "bold #D8DEE9"
+format = "[⏱ $duration]($style)"
+min_time = 2000
+
+# Хостнейм
+[hostname]
+ssh_symbol = " "
+style = "bold #8FBCBB"
+format = "[$ssh_symbol$hostname]($style) "
+
+# Юзернейм
+[username]
+style_user = "bold #8FBCBB"
+style_root = "bold #BF616A"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[bun]
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[buf]
+format = "with [$symbol($version )]($style)" 
+style = "bold blue"
+
+[c]
+format = "via [$symbol($version )]($style)"
+style = "bold #8FBCBB"
+
+[cmake]
+format = "via [$symbol($version )]($style)"
+style = "bold blue"
+
+[cobol]
+format = "via [$symbol($version )]($style)"
+style = "bold blue"
+
+[crystal]
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[dart]
+format = "via [$symbol($version )]($style)"
+style = "bold blue"
+
+[deno]
+format = "via [$symbol($version )]($style)"
+style = "bold green"
+
+[dotnet]
+format = "via [$symbol($version )(🎯 $tfm )]($style)"
+style = "bold blue"
+
+[elixir]
+format = "via [$symbol($version \\(OTP $otp_version\\) )]($style)"
+style = "bold purple"
+
+[elm]
+format = "via [$symbol($version )]($style)"
+style = "bold cyan"
+
+[golang]
+format = "via [$symbol($version )]($style)"
+style = "bold cyan"
+
+[haskell]
+format = "via [$symbol($version )]($style)"
+style = "bold purple"
+
+[java]
+format = "via [$symbol($version )]($style)"
+style = "red dimmed"
+
+[nodejs]
+format = "via [$symbol($version )]($style)"
+style = "bold green"
+
+[python]
+format = "via [${symbol}(${version} )(\\($virtualenv\\) )]($style)"
+style = "bold yellow"
+
+[rust]
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[ruby]
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[zig]
+format = "via [$symbol($version )]($style)"
+style = "bold yellow"

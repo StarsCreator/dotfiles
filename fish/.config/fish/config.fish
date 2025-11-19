@@ -1,7 +1,9 @@
+set -g fish_greeting
+
 if status is-interactive
-	if not set -q VSCODE_PID && not set -q SSH_CONNECTION
-        	fastfetch
-	end
+#	if not set -q VSCODE_PID && not set -q SSH_CONNECTION
+#        	fastfetch
+#	end
 end
 
 if test (tty) = "/dev/tty1"
