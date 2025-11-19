@@ -1,12 +1,14 @@
 # Colors
 
-font=JetBrainsMono Nerd Font 14
+font=JetBrains Mono 14
 width=400
 
 background-color=#2e3440
 
 text-color=#d8dee9
 text-alignment=left
+
+outer-margin=20
 
 border-size=3
 border-color=#88c0d0
@@ -15,7 +17,8 @@ icon-border-radius=10
 
 progress-color=over #8fbcbb
 
-icon-path=
+default-timeout=5000
 
-[urgency=high]
+[urgency=critical]
 border-color=#bf616a
+
